@@ -1,243 +1,90 @@
-/* === Decorative Background Shapes === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins",serif;
+}
+
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    color: #232323;
-    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-    position: relative;
-    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #333;
 }
 
-/* Top left blob */
-body::before {
-    content: "";
-    position: fixed;
-    top: -120px;
-    left: -120px;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle at 60% 40%, #36d1c4 60%, transparent 100%);
-    opacity: 0.32;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: 50%;
+.container {
+    margin: 0 15px;
+
 }
 
-/* Bottom right blob */
-body::after {
-    content: "";
-    position: fixed;
-    bottom: -140px;
-    right: -140px;
-    width: 340px;
-    height: 340px;
-    background: radial-gradient(circle at 40% 60%, #5b86e5 60%, transparent 100%);
-    opacity: 0.22;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: 50%;
-}
-
-/* === Navbar === */
-.navbar {
-    background: #fff;
-    border-bottom: 2px solid #e3e6ea;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    position: relative;
-    z-index: 2;
-}
-.navbar-brand {
-    font-weight: bold;
-    color: #2b5876 !important;
-    letter-spacing: 1px;
-    font-size: 1.6rem;
-}
-.nav-link {
-    color: #2b5876 !important;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-.nav-link:hover {
-    color: #4e4376 !important;
-}
-
-/* === Cards (Products) === */
-.card {
-    border: none;
-    border-radius: 22px;
-    box-shadow: 0 8px 32px rgba(46, 91, 255, 0.10), 0 2px 8px rgba(0,0,0,0.04);
-    transition: transform 0.18s, box-shadow 0.18s;
-    background: #fff;
-    min-height: 370px;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-}
-.card::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 110px;
-    height: 110px;
-    background: radial-gradient(circle at 30% 30%, #36d1c4 40%, transparent 80%);
-    opacity: 0.13;
-    z-index: 1;
-    border-radius: 50%;
-}
-.card::after {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    left: -30px;
-    width: 70px;
-    height: 70px;
-    background: radial-gradient(circle at 70% 70%, #5b86e5 50%, transparent 90%);
-    opacity: 0.12;
-    z-index: 1;
-    border-radius: 50%;
-}
-.card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 16px 40px rgba(46, 91, 255, 0.14), 0 3px 8px rgba(0,0,0,0.05);
-}
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-radius: 22px 22px 0 0;
-    background: #e3e6ea;
-    position: relative;
-    z-index: 2;
-}
-.card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2b5876;
-    z-index: 2;
-    position: relative;
-}
-.card-text {
-    font-size: 0.98rem;
-    color: #444;
-    z-index: 2;
-    position: relative;
-}
-.btn-primary, .btn-success {
-    border: none;
-    border-radius: 50px;
-    padding: 0.5rem 1.5rem;
-    font-weight: 600;
-    background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
-    color: #fff;
-    transition: background 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 16px rgba(91, 134, 229, 0.12);
-    z-index: 2;
-    position: relative;
-}
-.btn-primary:hover, .btn-success:hover {
-    background: linear-gradient(90deg, #5b86e5 0%, #36d1c4 100%);
-    color: #fff;
-    box-shadow: 0 8px 24px rgba(91, 134, 229, 0.17);
-}
-.btn-block {
+.form-box {
     width: 100%;
-}
-
-/* === Forms === */
-.form-control, .form-select {
-    border-radius: 10px;
-    border: 1.5px solid #b0b9c6;
-    font-size: 1rem;
-    transition: border-color 0.2s;
-}
-.form-control:focus, .form-select:focus {
-    border-color: #5b86e5;
-    box-shadow: 0 0 0 2px rgba(91, 134, 229, 0.13);
-}
-
-/* === Table Styling === */
-.table {
+    max-width: 450px;
+    padding: 30px;
     background: #fff;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 2px 14px rgba(91, 134, 229, 0.07);
-}
-.table th, .table td {
-    vertical-align: middle !important;
-}
-.table thead th {
-    background: #e3e6ea;
-    color: #2b5876;
-    font-weight: 600;
-    border-bottom: 2px solid #b0b9c6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
 }
 
-/* === Decorative Section Divider === */
-hr {
-    border-top: 2px dashed #b0b9c6;
-    width: 60%;
-    margin: 2.5rem auto;
-    opacity: 0.5;
-}
-
-/* === Footer === */
-.footer {
-    background: #f1f4f8;
-    border-top: 2px solid #e3e6ea;
-    color: #4e4376;
-    font-size: 1.02em;
-    letter-spacing: 0.02em;
-    padding: 1.2rem 0;
-    margin-top: 3rem;
-    box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
-    position: relative;
-    z-index: 2;
-}
-
-/* === Headings === */
-h2, h4, h5 {
-    color: #2b5876;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    position: relative;
-    z-index: 2;
-}
-h2::after {
-    content: "";
+.form-box.active {
     display: block;
-    width: 60px;
-    height: 5px;
-    background: linear-gradient(90deg, #36d1c4 0%, #5b86e5 100%);
-    border-radius: 8px;
-    margin-top: 8px;
+}
+
+h2 {
+    font-size: 32px;
+    text-align: center;
     margin-bottom: 20px;
-    opacity: 0.25;
 }
 
-/* === Responsive tweaks === */
-@media (max-width: 767px) {
-    .card-img-top {
-        height: 120px;
-    }
-    .footer {
-        font-size: 0.95em;
-    }
-    .navbar-brand {
-        font-size: 1.2rem;
-    }
-    .container {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-    h2::after {
-        width: 40px;
-        height: 3px;
-        margin-bottom: 12px;
-    }
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background: #eee;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-/* === Misc === */
-input[type="number"].form-control {
-    width: 80px;
-    display: inline-block;
+button {
+    width: 100%;
+    padding: 12px;
+    background: #7494ec;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+button:hover {
+    background: #6884d3;
+
+}
+
+p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p a {
+    color: #7494ec;
+    text-decoration: none;
+
+}
+
+p a:hover {
+    text-decoration: underline;
 }
